@@ -97,7 +97,7 @@ const projects: Project[] = [
         src: "https://cdn.prod.website-files.com/65961abb715913f363c9cb99/675bf7b05b6d42dadfc96c6d_ledger-satify.png",
         label: "Ledger x Satisfy campaign preview",
         full: true,
-        youtubeSrc: "https://www.youtube.com/embed/ixDtj-KxAtY?autoplay=1&start=111",
+        youtubeSrc: "https://www.youtube.com/embed/ixDtj-KxAtY?autoplay=1",
       },
     ],
   },

@@ -1,9 +1,36 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 
+const mediaTitle = "Media — Andrey Krylov";
+const mediaDescription =
+  "Publications, awards, references, talks and design resources by Andrey Krylov.";
+const coverImage = "/cover.png";
+
 export const metadata: Metadata = {
-  title: "Media — Andrey Krylov",
-  description: "Publications, awards, references, talks and design resources by Andrey Krylov.",
+  title: mediaTitle,
+  description: mediaDescription,
+  alternates: {
+    canonical: "/media",
+  },
+  openGraph: {
+    title: mediaTitle,
+    description: mediaDescription,
+    url: "/media",
+    images: [
+      {
+        url: coverImage,
+        width: 1200,
+        height: 630,
+        alt: "Andrey Krylov media page preview",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: mediaTitle,
+    description: mediaDescription,
+    images: [coverImage],
+  },
 };
 
 const sections = [
