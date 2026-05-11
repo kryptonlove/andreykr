@@ -12,9 +12,9 @@ const ibmPlexSans = IBM_Plex_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Andrey Krylov — Designer UIUX",
+  title: "Andrey Krylov — Product Designer",
   description:
-    "Designing Human-Computer Interactions and Information Systems. 10 years of multidisciplinary experience in design with primary focus on digital products and UX.",
+    "Designing systems, human-computer interactions, and product experiences.",
 };
 
 export default function RootLayout({

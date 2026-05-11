@@ -1,5 +1,5 @@
 import Link from "next/link";
-/* eslint-disable @next/next/no-img-element */
+import { ProjectMedia } from "@/components/ProjectMedia";
 type MediaItemData = {
   type: "image" | "video";
   src: string;
@@ -7,6 +7,7 @@ type MediaItemData = {
   variant?: "phone";
   wide?: boolean;
   full?: boolean;
+  youtubeSrc?: string;
 };
 
 type Project = {
@@ -22,7 +23,7 @@ type Project = {
 
 const projects: Project[] = [
     {
-    title: "Base App (formely Coinbase Wallet)",
+    title: "Coinbase Wallet",
     period: "2023 — 2025",
     description:
       "Designed a feature for Coinbase Wallet that makes sending money worldwide easier, cheaper, and faster — allowing users to send funds through a simple link via their favorite messaging and social apps, with no fees and instant settlement. Available in Base App.",
@@ -96,6 +97,7 @@ const projects: Project[] = [
         src: "https://cdn.prod.website-files.com/65961abb715913f363c9cb99/675bf7b05b6d42dadfc96c6d_ledger-satify.png",
         label: "Ledger x Satisfy campaign preview",
         full: true,
+        youtubeSrc: "https://www.youtube.com/embed/ixDtj-KxAtY?autoplay=1",
       },
     ],
   },
@@ -151,29 +153,6 @@ function ProjectMeta({ project }: { project: Project }) {
   );
 }
 
-function MediaItem({ item }: { item: MediaItemData }) {
-  const className = [
-    "media-item",
-    item.variant === "phone" ? "media-item-phone" : "",
-    item.wide ? "media-item-wide" : "",
-    item.full ? "media-item-full" : "",
-  ]
-    .filter(Boolean)
-    .join(" ");
-
-  return (
-    <figure className={className}>
-      {item.type === "video" ? (
-        <video autoPlay muted loop playsInline aria-label={item.label}>
-          <source src={item.src} type="video/mp4" />
-        </video>
-      ) : (
-        <img src={item.src} alt={item.label} loading="lazy" />
-      )}
-    </figure>
-  );
-}
-
 export default function Home() {
   return (
     <main>
@@ -187,12 +166,12 @@ export default function Home() {
       <section className="hero" id="about">
         <h1>Andrey Krylov</h1>
         <h2>
-          Working with systems, building human+computer interactions, and lead
-          teams for products
+          Designing systems, human-computer interactions, and product experiences.
         </h2>
         <p>
-          10 years of multidisciplinary experience in design with primary focus
-          on digital and user experience
+          Product designer with 10+ years of experience building consumer,
+          fintech, gaming and web3 products — from early concepts
+          and prototypes to production-ready user experiences.
         </p>
       </section>
 
@@ -215,7 +194,7 @@ export default function Home() {
 
             <div className="media-grid">
               {project.media.map((item) => (
-                <MediaItem item={item} key={item.src} />
+                <ProjectMedia item={item} key={item.src} />
               ))}
             </div>
           </article>

@@ -8,32 +8,49 @@ export const metadata: Metadata = {
 
 const sections = [
   {
-    title: "Publications",
+    title: "Publications and Public Talks",
     items: [
       {
-        label: "The future of fintech [RU]",
+        label: "Blog OG Web3 Music Deep Dive | Speaker",
+        year: "2024",
+        action: "Twitter Space",
+        href: "https://twitter.com/i/spaces/1OdKrzvraQwKX",
+      },
+      {
+        label: "Bloc OGs: The Impact of AI | Speaker",
+        year: "2024",
+        action: "Twitter Space",
+        href: "https://twitter.com/i/spaces/1OyKAVpwmbnGb",
+      },
+      {
+        label: "Coinbase Wallet Integration",
+        year: "2023",
         action: "Read",
-        href: "https://vc.ru/life/178184-budushchee-finteha-ili-kak-my-pobedili-na-krupneyshem-hakatone-evropy-junction-ne-vyhodya-iz-doma",
+        href: "https://blog.linkdrop.io/enabling-token-transfers-via-links-in-coinbase-wallet-integration-9c42531c0882",
       },
       {
         label: "How NFT marketing shapes the future of metaverses",
+        year: "2022",
         action: "Read",
         href: "https://medium.com/@kryptonlove/how-nft-marketing-shapes-the-future-of-metaverses-838bf9b4b2cd",
       },
       {
         label: "What is PFP NFT?",
+        year: "2022",
         action: "Read",
         href: "https://medium.com/@kryptonlove/what-is-pfp-nft-f29a5278463a",
       },
       {
         label: "How to reward users with NFTs",
+        year: "2022",
         action: "Read",
         href: "https://medium.com/@kryptonlove/how-to-reward-users-with-nfts-314f46f74f1e",
       },
       {
-        label: "Coinbase Wallet Integration",
+        label: "The future of fintech [RU]",
+        year: "2020",
         action: "Read",
-        href: "https://blog.linkdrop.io/enabling-token-transfers-via-links-in-coinbase-wallet-integration-9c42531c0882",
+        href: "https://vc.ru/life/178184-budushchee-finteha-ili-kak-my-pobedili-na-krupneyshem-hakatone-evropy-junction-ne-vyhodya-iz-doma",
       },
     ],
   },
@@ -41,24 +58,28 @@ const sections = [
     title: "References",
     items: [
       {
-        label: "Junction 2020 ConnectedMain Prize winning team",
-        action: "Watch",
-        href: "https://www.youtube.com/watch?v=Zc7ce9MxTNg",
-      },
-      {
-        label: "Effie TECH 2021. GroupM Choise, speaker [RU]",
-        action: "Watch",
-        href: "https://www.youtube.com/watch?v=cmHwmsOO74I",
-      },
-      {
         label: "CryptoLive: Design in Crypto [RU]",
+        year: "2022",
         action: "Watch",
         href: "https://www.youtube.com/watch?v=92Ribi_SbaE",
       },
       {
         label: "SuperDAO: What is PFP NFT?",
+        year: "2022",
         action: "Watch",
         href: "https://www.youtube.com/watch?v=f77KOb-dE6A",
+      },
+      {
+        label: "Effie TECH 2021. GroupM Choise, speaker [RU]",
+        year: "2021",
+        action: "Watch",
+        href: "https://www.youtube.com/watch?v=cmHwmsOO74I",
+      },
+      {
+        label: "Junction 2020 ConnectedMain Prize winning team",
+        year: "2020",
+        action: "Watch",
+        href: "https://www.youtube.com/watch?v=Zc7ce9MxTNg",
       },
     ],
   },
@@ -67,18 +88,21 @@ const sections = [
     items: [
       {
         label: "AI Buildathon by B3 x Atari: First Place — Slow Down Game",
+        year: "2025",
         action: "View",
         href: "https://x.com/b3dotfun/status/1909717697337999559",
       },
       {
-        label: "Junction Hackathon Main Prize: Saavi — Healthy Finance",
-        action: "View",
-        href: "https://blog.hackjunction.com/the-winners-of-junction-2020-connected-2ed7333f429e",
-      },
-      {
         label: "Smoothie Product Awards 2nd Place: Linkdrop Dashboard",
+        year: "2022",
         action: "View",
         href: "https://smoothie.so/product/nft/nft-distribution-tools/linkdrop-v2/roydxke0",
+      },
+      {
+        label: "Junction Hackathon Main Prize: Saavi — Healthy Finance",
+        year: "2020",
+        action: "View",
+        href: "https://blog.hackjunction.com/the-winners-of-junction-2020-connected-2ed7333f429e",
       },
     ],
   },
@@ -87,21 +111,25 @@ const sections = [
     items: [
       {
         label: "Metamask Browser for iOS",
+        year: "—",
         action: "Download",
         href: "https://www.figma.com/community/file/1120087846035553133",
       },
       {
         label: "Financial Icon Set",
+        year: "—",
         action: "Download",
         href: "https://thenounproject.com/browse/collection-icon/financial-icon-set-135594/?p=1",
       },
       {
         label: "Public Transport Icon Set",
+        year: "—",
         action: "Download",
         href: "https://thenounproject.com/browse/collection-icon/public-transportation-navigation-51186/?p=1",
       },
       {
         label: "Online Photobook Editor",
+        year: "—",
         action: "Download",
         href: "https://thenounproject.com/browse/collection-icon/online-photobook-editor-11110/?p=1",
       },
@@ -145,6 +173,7 @@ export default function MediaPage() {
               {section.items.map((item) => (
                 <div className="link-row" key={item.href}>
                   <p>{item.label}</p>
+                  <span className="link-row-year">{item.year}</span>
                   <a href={item.href} target="_blank" rel="noreferrer">
                     {item.action}
                   </a>
