@@ -1,14 +1,11 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Sans } from "next/font/google";
+import { Geist } from "next/font/google";
 import { AnimatedFavicon } from "@/components/AnimatedFavicon";
-import { ThemeToggle } from "@/components/ThemeToggle";
-import { GridToggle } from "@/components/GridToggle";
+import { SiteHeader } from "@/components/SiteHeader";
 import "./globals.css";
-
-const ibmPlexSans = IBM_Plex_Sans({
-  variable: "--font-ibm-plex-sans",
+const geist = Geist({
+  variable: "--font-sans",
   subsets: ["latin"],
-  weight: ["300", "400", "500"],
 });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://andreykr.com";
@@ -54,11 +51,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={ibmPlexSans.variable}>
-      <body className={ibmPlexSans.className}>
+    <html lang="en" className={geist.variable}>
+      <body className={geist.className}>
         <AnimatedFavicon />
-        <ThemeToggle />
-        <GridToggle />
+        <SiteHeader />
         {children}
       </body>
     </html>

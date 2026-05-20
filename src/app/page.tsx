@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { ExternalLink } from "lucide-react";
 import { ProjectMedia } from "@/components/ProjectMedia";
 type MediaItemData = {
   type: "image" | "video";
@@ -8,6 +8,7 @@ type MediaItemData = {
   wide?: boolean;
   full?: boolean;
   youtubeSrc?: string;
+  sharp?: boolean;
 };
 
 type Project = {
@@ -22,7 +23,26 @@ type Project = {
 };
 
 const projects: Project[] = [
-    {
+  {
+    title: "Diggle Interactive",
+    period: "2025 — Present Time",
+    description:
+      "Founded Diggle Interactive, an independent gaming studio building casual browser and mobile games with reward systems for Web3-native audiences. Launched from scratch in 2025 and grew to 35K+ players through onchain distribution, community campaigns, and partnerships with Coinbase and Zerion Wallet ecosystems.",
+    linkLabel: "Diggle Fun",
+    linkHref:
+      "https://diggle.fun",
+    role: "Founder",
+    responsibility: ["User Design Experience", "Game Design"],
+    media: [
+      {
+        type: "video",
+        src: "/diggle-games-demo.mp4",
+        label: "Diggle Interactive game demo",
+        full: true,
+      },
+    ],
+  },
+  {
     title: "Coinbase Wallet",
     period: "2023 — 2025",
     description:
@@ -44,7 +64,7 @@ const projects: Project[] = [
 
   {
     title: "Linkdrop",
-    period: "2020 — 2024",
+    period: "2020 — 2025",
     description:
       "Product Design Lead at Linkdrop, a New York based startup that empowers web3 financial organizations such as Coinbase, Ledger, Zerion to onboard new crypto users to their apps.",
     linkLabel: "Linkdrop.io",
@@ -54,30 +74,24 @@ const projects: Project[] = [
     media: [
       {
         type: "video",
-        src: "https://cdn.jsdelivr.net/gh/kryptonlove/content/sender_iphone_mask2-optimized.mp4",
-        label: "Linkdrop mobile sender flow",
-        variant: "phone",
-        wide: true,
-
-      },
-      {
-        type: "image",
-        src: "https://cdn.prod.website-files.com/65961abb715913f363c9cb99/6597a3034db848d776b507bf_widget.png",
+        src: "/linkdrop-widget.mp4",
         label: "Linkdrop widget interface",
         wide: true,
 
       },
       {
         type: "image",
-        src: "https://cdn.prod.website-files.com/65961abb715913f363c9cb99/6596856c4442d2b3999472db_Frame%201547765941.png",
-        label: "Linkdrop platform screens",
+        src: "/linkdrop-dashboard-campaigns.png",
+        label: "Linkdrop dashboard campaigns",
         wide: true,
+        sharp: true,
       },
       {
         type: "image",
-        src: "https://cdn.prod.website-files.com/65961abb715913f363c9cb99/6597af8f909e422694644f3c_dark_dashboard.png",
-        label: "Linkdrop dashboard",
+        src: "/linkdrop-dashboard-campaigns-details.png",
+        label: "Linkdrop dashboard campaign details",
         wide: true,
+        sharp: true,
 
       },
     ],
@@ -97,7 +111,7 @@ const projects: Project[] = [
         src: "https://cdn.prod.website-files.com/65961abb715913f363c9cb99/675bf7b05b6d42dadfc96c6d_ledger-satify.png",
         label: "Ledger x Satisfy campaign preview",
         full: true,
-        youtubeSrc: "https://www.youtube.com/embed/ixDtj-KxAtY?autoplay=1",
+        youtubeSrc: "https://www.youtube.com/embed/ixDtj-KxAtY?autoplay=1&start=98",
       },
     ],
   },
@@ -134,8 +148,9 @@ function ProjectMeta({ project }: { project: Project }) {
       <div>
         <dt>Link</dt>
         <dd>
-          <a href={project.linkHref} target="_blank" rel="noreferrer">
+          <a className="external-link" href={project.linkHref} target="_blank" rel="noreferrer">
             {project.linkLabel}
+            <ExternalLink aria-hidden="true" />
           </a>
         </dd>
       </div>
@@ -156,28 +171,19 @@ function ProjectMeta({ project }: { project: Project }) {
 export default function Home() {
   return (
     <main>
-      <nav className="site-nav" aria-label="Primary navigation">
-        <ul>
-          <li><Link href="/">About</Link></li>
-          <li><Link href="/media">Media</Link></li>
-        </ul>
-      </nav>
 
       <section className="hero" id="about">
-        <h1>Andrey Krylov</h1>
-        <h2>
-          Designing systems, human-computer interactions, and product experiences.
-        </h2>
-        <p>
-          Product designer with 10+ years of experience building consumer,
-          fintech, gaming and web3 products — from early concepts
-          and prototypes to production-ready user experiences.
-        </p>
+        <div className="hero-content">
+          <p className="hero-subheader">ANDREY KRYLOV</p>
+          <h1>Designing systems, human-computer interactions, and product experiences.</h1>
+          <p className="hero-description">
+            Product designer with 10+ years of experience building consumer, fintech, gaming, Web3, and AI-powered products — from early concepts and prototypes to production-ready user experiences.
+          </p>
+        </div>
       </section>
 
-      <section className="section-heading" id="works" aria-labelledby="works-title">
+      <section className="section-heading" id="works" aria-label="Works">
         <p>Works</p>
-        <h2 id="works-title">Highlights</h2>
       </section>
 
       <div className="projects">

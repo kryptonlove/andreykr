@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { ExternalLink } from "lucide-react";
 import type { Metadata } from "next";
 
 const mediaTitle = "Media — Andrey Krylov";
@@ -35,18 +35,47 @@ export const metadata: Metadata = {
 
 const sections = [
   {
+    title: "Awards",
+    items: [
+      {
+        label: "AI Buildathon by B3 x Atari: 1st Place — Slow Down Game",
+        year: "2025",
+        action: "View",
+        href: "https://x.com/b3dotfun/status/1909717697337999559",
+      },
+      {
+        label: "Smoothie Product Awards: 2nd Place - Linkdrop Dashboard",
+        year: "2022",
+        action: "View",
+        href: "https://x.com/withsmoothie/status/1645405228047679490",
+      },
+      {
+        label: "Junction Hackathon: 1st Place — Saavi, Healthy Finance",
+        year: "2020",
+        action: "View",
+        href: "https://x.com/hackJunction/status/1325426708040871936",
+      },
+    ],
+  },
+  {
     title: "Publications and Public Talks",
     items: [
       {
+        label: "Developing Video Games With AI | Featured Speaker",
+        year: "2026",
+        action: "Watch on X",
+        href: "https://x.com/i/broadcasts/1vKpProQYkXKE",
+      },
+      {
         label: "Blog OG Web3 Music Deep Dive | Speaker",
         year: "2024",
-        action: "Twitter Space",
+        action: "Listen on X",
         href: "https://twitter.com/i/spaces/1OdKrzvraQwKX",
       },
       {
         label: "Bloc OGs: The Impact of AI | Speaker",
         year: "2024",
-        action: "Twitter Space",
+        action: "Listen on X",
         href: "https://twitter.com/i/spaces/1OyKAVpwmbnGb",
       },
       {
@@ -103,33 +132,10 @@ const sections = [
         href: "https://www.youtube.com/watch?v=cmHwmsOO74I",
       },
       {
-        label: "Junction 2020 ConnectedMain Prize winning team",
+        label: "Junction 2020 Connected — Main Prize winning team",
         year: "2020",
         action: "Watch",
         href: "https://www.youtube.com/watch?v=Zc7ce9MxTNg",
-      },
-    ],
-  },
-  {
-    title: "Awards",
-    items: [
-      {
-        label: "AI Buildathon by B3 x Atari: First Place — Slow Down Game",
-        year: "2025",
-        action: "View",
-        href: "https://x.com/b3dotfun/status/1909717697337999559",
-      },
-      {
-        label: "Smoothie Product Awards 2nd Place: Linkdrop Dashboard",
-        year: "2022",
-        action: "View",
-        href: "https://smoothie.so/product/nft/nft-distribution-tools/linkdrop-v2/roydxke0",
-      },
-      {
-        label: "Junction Hackathon Main Prize: Saavi — Healthy Finance",
-        year: "2020",
-        action: "View",
-        href: "https://blog.hackjunction.com/the-winners-of-junction-2020-connected-2ed7333f429e",
       },
     ],
   },
@@ -174,20 +180,15 @@ const socials = [
 export default function MediaPage() {
   return (
     <main>
-      <nav className="site-nav" aria-label="Primary navigation">
-        <ul>
-          <li><Link href="/">About</Link></li>
-          <li><Link href="/media">Media</Link></li>
-        </ul>
-      </nav>
 
       <section className="hero">
-        <h1>Media</h1>
-        <h2>Collection of publications, awards and mentions in media</h2>
-        <p>
-          Participating in public talks as HCI designer with large experience in
-          Product and Interaction Design, Financial Technologies and Web3
-        </p>
+        <div className="hero-content">
+          <p className="hero-subheader">MEDIA</p>
+          <h1>Collection of publications, awards, and media mentions.</h1>
+          <p className="hero-description">
+            I speak at public events about human-computer interaction, product design, fintech, Web3, and AI-powered products, drawing on 10+ years of experience building digital products.
+          </p>
+        </div>
       </section>
 
       <section className="publications" aria-label="Media links">
@@ -201,8 +202,9 @@ export default function MediaPage() {
                 <div className="link-row" key={item.href}>
                   <p>{item.label}</p>
                   <span className="link-row-year">{item.year}</span>
-                  <a href={item.href} target="_blank" rel="noreferrer">
+                  <a className="external-link" href={item.href} target="_blank" rel="noreferrer">
                     {item.action}
+                    <ExternalLink aria-hidden="true" />
                   </a>
                 </div>
               ))}

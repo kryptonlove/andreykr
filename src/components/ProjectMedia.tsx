@@ -11,6 +11,7 @@ type ProjectMediaItem = {
   wide?: boolean;
   full?: boolean;
   youtubeSrc?: string;
+  sharp?: boolean;
 };
 
 export function ProjectMedia({ item }: { item: ProjectMediaItem }) {
@@ -20,6 +21,7 @@ export function ProjectMedia({ item }: { item: ProjectMediaItem }) {
     item.variant === "phone" ? "media-item-phone" : "",
     item.wide ? "media-item-wide" : "",
     item.full ? "media-item-full" : "",
+    item.sharp ? "media-item-sharp" : "",
     item.youtubeSrc && isPlaying ? "media-item-playing" : "",
   ]
     .filter(Boolean)
