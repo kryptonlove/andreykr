@@ -24,10 +24,29 @@ type Project = {
 
 const projects: Project[] = [
   {
+    title: "Coinbase Wallet",
+    period: "2023 — 2025",
+    description:
+      "Designed a feature for Coinbase Wallet that makes sending money worldwide easier, cheaper, and faster — allowing users to send funds through a simple link via their favorite messaging and social apps, with no fees and instant settlement. Available in Base App.",
+    linkLabel: "Coinbase Blog",
+    linkHref:
+      "https://www.coinbase.com/blog/with-coinbase-wallet-sending-money-is-now-as-easy-as-sending-a-text",
+    role: "Product Designer",
+    responsibility: ["Rapid prototyping", "User Design Experience"],
+    media: [
+      {
+        type: "video",
+        src: "/coinbase-send-money-as-text.mp4",
+        label: "Coinbase send money as text demo",
+        full: true,
+      },
+    ],
+  },
+  {
     title: "Diggle Interactive",
     period: "2025 — Present Time",
     description:
-      "Founded Diggle Interactive, an independent gaming studio building casual browser and mobile games with reward systems for Web3-native audiences. Launched from scratch in 2025 and grew to 35K+ players through onchain distribution, community campaigns, and partnerships with Coinbase and Zerion Wallet ecosystems.",
+      "Founded Diggle Interactive, an independent gaming studio building casual browser and mobile games with reward systems for Web3-native audiences. Launched from scratch in 2025 and grew to 35K+ players through onchain distribution, community campaigns, and partnerships with Coinbase and Zerion Wallet ecosystems.",
     linkLabel: "Diggle Fun",
     linkHref:
       "https://diggle.fun",
@@ -40,23 +59,10 @@ const projects: Project[] = [
         label: "Diggle Interactive game demo",
         full: true,
       },
-    ],
-  },
-  {
-    title: "Coinbase Wallet",
-    period: "2023 — 2025",
-    description:
-      "Designed a feature for Coinbase Wallet that makes sending money worldwide easier, cheaper, and faster — allowing users to send funds through a simple link via their favorite messaging and social apps, with no fees and instant settlement. Available in Base App.",
-    linkLabel: "Coinbase Blog",
-    linkHref:
-      "https://www.coinbase.com/blog/with-coinbase-wallet-sending-money-is-now-as-easy-as-sending-a-text",
-    role: "Product Designer",
-    responsibility: ["Rapid prototyping", "User Design Experience"],
-    media: [
       {
         type: "video",
-        src: "/coinbase-send-money-as-text.mp4",
-        label: "Coinbase send money as text demo",
+        src: "/hiptobesquare.mp4",
+        label: "Hip To Be Square gameplay demo",
         full: true,
       },
     ],
@@ -175,9 +181,9 @@ export default function Home() {
       <section className="hero" id="about">
         <div className="hero-content">
           <p className="hero-subheader">ANDREY KRYLOV</p>
-          <h1>Designing systems, human-computer interactions, and product experiences.</h1>
+          <h1>Designing systems, human-computer interactions, and product experiences.</h1>
           <p className="hero-description">
-            Product designer with 10+ years of experience building consumer, fintech, gaming, Web3, and AI-powered products — from early concepts and prototypes to production-ready user experiences.
+            Product designer with 10+ years of experience building consumer, fintech, gaming, Web3, and AI-powered products — from early concepts and prototypes to production-ready user experiences.
           </p>
         </div>
       </section>
@@ -190,11 +196,11 @@ export default function Home() {
         {projects.map((project) => (
           <article className="project" key={project.title}>
             <header className="project-header">
-              <div>
-                <h3>{project.title}</h3>
+              <div className="project-title-block">
                 <p>{project.period}</p>
+                <h3>{project.title}</h3>
               </div>
-              <p>{project.description}</p>
+              <p className="project-description">{project.description}</p>
               <ProjectMeta project={project} />
             </header>
 

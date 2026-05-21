@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 
 const researchTitle = "Visual Research — Andrey Krylov";
 const researchDescription =
-  "Visual research and experiments in generative graphics, creative coding, interaction design and games.";
+  "Visual research and experiments in generative graphics, creative coding, interaction design and games.";
 const coverImage = "/cover.png";
 
 export const metadata: Metadata = {
@@ -92,9 +92,9 @@ export default function ResearchPage() {
       <section className="hero">
         <div className="hero-content">
           <p className="hero-subheader">RESEARCH</p>
-          <h1>Visual research, creative coding, and experimental interaction and game design.</h1>
+          <h1>Visual research, creative coding, and experimental interaction and game design.</h1>
           <p className="hero-description">
-            A collection of exploratory projects across generative graphics, GLSL shaders, AI-assisted visuals, and interactive prototypes — focused on form, motion, systems, and human-computer interaction.
+            A collection of exploratory projects across generative graphics, GLSL shaders, AI-assisted visuals, and interactive prototypes — focused on form, motion, systems, and human-computer interaction.
           </p>
         </div>
       </section>

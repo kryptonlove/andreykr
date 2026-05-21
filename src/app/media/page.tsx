@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 
 const mediaTitle = "Media — Andrey Krylov";
 const mediaDescription =
-  "Publications, awards, references, talks and design resources by Andrey Krylov.";
+  "Publications, awards, references, talks and design resources by Andrey Krylov.";
 const coverImage = "/cover.png";
 
 export const metadata: Metadata = {
@@ -58,24 +58,24 @@ const sections = [
     ],
   },
   {
-    title: "Publications and Public Talks",
+    title: "Publications and Public Talks",
     items: [
       {
         label: "Developing Video Games With AI | Featured Speaker",
         year: "2026",
-        action: "Watch on X",
+        action: "Watch",
         href: "https://x.com/i/broadcasts/1vKpProQYkXKE",
       },
       {
         label: "Blog OG Web3 Music Deep Dive | Speaker",
         year: "2024",
-        action: "Listen on X",
+        action: "Listen",
         href: "https://twitter.com/i/spaces/1OdKrzvraQwKX",
       },
       {
         label: "Bloc OGs: The Impact of AI | Speaker",
         year: "2024",
-        action: "Listen on X",
+        action: "Listen",
         href: "https://twitter.com/i/spaces/1OyKAVpwmbnGb",
       },
       {
@@ -184,9 +184,9 @@ export default function MediaPage() {
       <section className="hero">
         <div className="hero-content">
           <p className="hero-subheader">MEDIA</p>
-          <h1>Collection of publications, awards, and media mentions.</h1>
+          <h1>Collection of publications, awards, and media mentions.</h1>
           <p className="hero-description">
-            I speak at public events about human-computer interaction, product design, fintech, Web3, and AI-powered products, drawing on 10+ years of experience building digital products.
+            I speak at public events about human-computer interaction, product design, fintech, Web3, and AI-powered products, drawing on 10+ years of experience building digital products.
           </p>
         </div>
       </section>

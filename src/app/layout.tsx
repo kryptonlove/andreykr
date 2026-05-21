@@ -11,7 +11,7 @@ const geist = Geist({
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://andreykr.com";
 const siteTitle = "Andrey Krylov — Product Designer";
 const siteDescription =
-  "Designing systems, human-computer interactions, and product experiences.";
+  "Designing systems, human-computer interactions, and product experiences.";
 const coverImage = "/cover.png";
 
 export const metadata: Metadata = {

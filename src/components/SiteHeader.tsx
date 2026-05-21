@@ -177,8 +177,17 @@ export function SiteHeader() {
     applyTheme(theme);
   }, [theme]);
 
+  useEffect(() => {
+    document.body.classList.toggle("layout-grid-visible", isGridVisible);
+
+    return () => {
+      document.body.classList.remove("layout-grid-visible");
+    };
+  }, [isGridVisible]);
+
   return (
-    <header className="site-header">
+    <>
+      <header className="site-header">
       <div className="site-header-inner">
         <Link className="site-header-mark" href="/" aria-label="Andrey Krylov home">
           <HeaderMark />
@@ -222,17 +231,18 @@ export function SiteHeader() {
             {theme === "dark" ? <Sun aria-hidden="true" /> : <Moon aria-hidden="true" />}
           </Button>
         </div>
-
-        {isGridVisible ? (
-          <div className="layout-grid-overlay" aria-hidden="true">
-            <div>
-              {Array.from({ length: 12 }, (_, index) => (
-                <span key={index} />
-              ))}
-            </div>
-          </div>
-        ) : null}
       </div>
     </header>
+
+      {isGridVisible ? (
+        <div className="layout-grid-overlay" aria-hidden="true">
+          <div>
+            {Array.from({ length: 12 }, (_, index) => (
+              <span key={index} />
+            ))}
+          </div>
+        </div>
+      ) : null}
+    </>
   );
 }
