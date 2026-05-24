@@ -38,7 +38,7 @@ const projects: Project[] = [
     linkHref:
       "https://www.coinbase.com/blog/with-coinbase-wallet-sending-money-is-now-as-easy-as-sending-a-text",
     role: "Product Designer",
-    responsibility: ["Rapid prototyping", "User Design Experience"],
+    responsibility: ["Rapid prototyping", "User Experience"],
     media: [
       {
         type: "video",
@@ -76,10 +76,10 @@ const projects: Project[] = [
         label: "Hip To Be Square gameplay demo",
         full: true,
         caption: {
-          before: "Browser shooter ",
+          before: "Browser shooter (desktop only) ",
           linkLabel: "Hip To Be Square",
           href: "https://hiptobesquare.diggle.fun/",
-          after: " built with ThreeJS (Desktop only).",
+          after: " built w/ ThreeJS.",
         },
       },
     ],
@@ -202,7 +202,7 @@ export default function Home() {
           <p className="hero-description">
             Product designer with 10+ years of experience building consumer, fintech, gaming, Web3, and AI-powered products — from early concepts and prototypes to production-ready user experiences.
           </p>
-          <p className="hero-description">
+          <p className="hero-description hero-ai-setup">
             Current AI setup: GPT-5.5 + Images 2.0 + Figma & Mobbin MCP via Codex App, ElevenLabs for SFX
           </p>
         </div>

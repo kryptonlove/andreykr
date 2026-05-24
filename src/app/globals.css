@@ -540,6 +540,11 @@ body.layout-grid-visible .footer::after {
   line-height: 26px;
   letter-spacing: 0;
 }
+
+.hero-description.hero-ai-setup {
+  font-size: 15px;
+  line-height: 21px;
+}
 .section-heading {
   width: 100%;
   max-width: 1140px;
@@ -703,8 +708,11 @@ body.layout-grid-visible .footer::after {
 .media-caption {
   position: absolute;
   top: calc(100% + 14px);
-  left: 0;
+  left: 50%;
+  width: 100%;
   margin: 0;
+  text-align: center;
+  transform: translateX(-50%);
   color: var(--text-grey-50);
   font-size: 14px;
   font-weight: 400;

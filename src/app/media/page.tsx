@@ -139,35 +139,6 @@ const sections = [
       },
     ],
   },
-  {
-    title: "Free Design Resources",
-    items: [
-      {
-        label: "Metamask Browser for iOS",
-        year: "—",
-        action: "Download",
-        href: "https://www.figma.com/community/file/1120087846035553133",
-      },
-      {
-        label: "Financial Icon Set",
-        year: "—",
-        action: "Download",
-        href: "https://thenounproject.com/browse/collection-icon/financial-icon-set-135594/?p=1",
-      },
-      {
-        label: "Public Transport Icon Set",
-        year: "—",
-        action: "Download",
-        href: "https://thenounproject.com/browse/collection-icon/public-transportation-navigation-51186/?p=1",
-      },
-      {
-        label: "Online Photobook Editor",
-        year: "—",
-        action: "Download",
-        href: "https://thenounproject.com/browse/collection-icon/online-photobook-editor-11110/?p=1",
-      },
-    ],
-  },
 ];
 
 const socials = [
