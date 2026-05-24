@@ -38,7 +38,7 @@ const sections = [
     title: "Generative graphics",
     items: [
       {
-        label: "Jetlaim x Kxlimist Audiovisual Experience",
+        label: "Jetlaim Audiovisual Experience",
         year: "2023",
         action: "Watch",
         href: "https://www.youtube.com/watch?v=0lWgdc8CcoA",

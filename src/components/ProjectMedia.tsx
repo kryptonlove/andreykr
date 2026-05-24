@@ -7,12 +7,30 @@ type ProjectMediaItem = {
   type: "image" | "video";
   src: string;
   label: string;
+  caption?: {
+    before?: string;
+    linkLabel: string;
+    href: string;
+    after?: string;
+  };
   variant?: "phone";
   wide?: boolean;
   full?: boolean;
   youtubeSrc?: string;
   sharp?: boolean;
 };
+
+function MediaCaption({ caption }: { caption: NonNullable<ProjectMediaItem["caption"]> }) {
+  return (
+    <figcaption className="media-caption">
+      {caption.before}
+      <a href={caption.href} target="_blank" rel="noreferrer">
+        {caption.linkLabel}
+      </a>
+      {caption.after}
+    </figcaption>
+  );
+}
 
 export function ProjectMedia({ item }: { item: ProjectMediaItem }) {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -22,6 +40,7 @@ export function ProjectMedia({ item }: { item: ProjectMediaItem }) {
     item.wide ? "media-item-wide" : "",
     item.full ? "media-item-full" : "",
     item.sharp ? "media-item-sharp" : "",
+    item.caption ? "media-item-captioned" : "",
     item.youtubeSrc && isPlaying ? "media-item-playing" : "",
   ]
     .filter(Boolean)
@@ -36,6 +55,7 @@ export function ProjectMedia({ item }: { item: ProjectMediaItem }) {
           allow="autoplay; encrypted-media; picture-in-picture"
           allowFullScreen
         />
+        {item.caption ? <MediaCaption caption={item.caption} /> : null}
       </figure>
     );
   }
@@ -59,6 +79,7 @@ export function ProjectMedia({ item }: { item: ProjectMediaItem }) {
       ) : (
         <img src={item.src} alt={item.label} loading="lazy" />
       )}
+      {item.caption ? <MediaCaption caption={item.caption} /> : null}
     </figure>
   );
 }

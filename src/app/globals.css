@@ -688,6 +688,7 @@ body.layout-grid-visible .footer::after {
 }
 
 .media-item {
+  position: relative;
   min-height: 520px;
   display: flex;
   align-items: center;
@@ -697,6 +698,32 @@ body.layout-grid-visible .footer::after {
   overflow: hidden;
   border-radius: 24px;
   background: var(--surfacegrey);
+}
+
+.media-caption {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 0;
+  margin: 0;
+  color: var(--text-grey-50);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.media-caption a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.media-caption a:hover {
+  color: var(--onsurface);
+}
+
+.media-item-captioned {
+  overflow: visible;
+  margin-bottom: 132px;
 }
 
 .media-item img,
@@ -1221,6 +1248,17 @@ body.layout-grid-visible .footer::after {
     margin-bottom: 20px;
     padding: 20px 0;
     border-radius: 24px;
+  }
+
+  .media-caption {
+    top: calc(100% + 10px);
+    font-size: 13px;
+    line-height: 18px;
+  }
+
+  .media-item-captioned {
+    overflow: visible;
+    margin-bottom: 72px;
   }
 
   .media-item img,

@@ -4,6 +4,12 @@ type MediaItemData = {
   type: "image" | "video";
   src: string;
   label: string;
+  caption?: {
+    before?: string;
+    linkLabel: string;
+    href: string;
+    after?: string;
+  };
   variant?: "phone";
   wide?: boolean;
   full?: boolean;
@@ -51,19 +57,30 @@ const projects: Project[] = [
     linkHref:
       "https://diggle.fun",
     role: "Founder",
-    responsibility: ["User Design Experience", "Game Design"],
+    responsibility: ["User Experience", "Game Design"],
     media: [
       {
         type: "video",
         src: "/diggle-games-demo.mp4",
         label: "Diggle Interactive game demo",
         full: true,
+        caption: {
+          before: "Instant games at ",
+          linkLabel: "Diggle Play",
+          href: "https://play.diggle.fun/",
+        },
       },
       {
         type: "video",
         src: "/hiptobesquare.mp4",
         label: "Hip To Be Square gameplay demo",
         full: true,
+        caption: {
+          before: "Browser shooter ",
+          linkLabel: "Hip To Be Square",
+          href: "https://hiptobesquare.diggle.fun/",
+          after: " built with ThreeJS (Desktop only).",
+        },
       },
     ],
   },
@@ -117,7 +134,7 @@ const projects: Project[] = [
         src: "https://cdn.prod.website-files.com/65961abb715913f363c9cb99/675bf7b05b6d42dadfc96c6d_ledger-satify.png",
         label: "Ledger x Satisfy campaign preview",
         full: true,
-        youtubeSrc: "https://www.youtube.com/embed/ixDtj-KxAtY?autoplay=1&start=98",
+        youtubeSrc: "https://www.youtube.com/embed/ixDtj-KxAtY?autoplay=1&start=148",
       },
     ],
   },
@@ -185,11 +202,14 @@ export default function Home() {
           <p className="hero-description">
             Product designer with 10+ years of experience building consumer, fintech, gaming, Web3, and AI-powered products — from early concepts and prototypes to production-ready user experiences.
           </p>
+          <p className="hero-description">
+            Current AI setup: GPT-5.5 + Images 2.0 + Figma & Mobbin MCP via Codex App, ElevenLabs for SFX
+          </p>
         </div>
       </section>
 
       <section className="section-heading" id="works" aria-label="Works">
-        <p>Works</p>
+        <p>Selected Works</p>
       </section>
 
       <div className="projects">
